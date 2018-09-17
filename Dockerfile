@@ -1,7 +1,9 @@
 FROM node:7
-WORKDIR /Users/aditya/Desktop/Aditya/practise/svg
-COPY package.json /Users/aditya/Desktop/Aditya/practise/svg
+#/app should be your full project directory 
+ENV workdir /app  
+WORKDIR ${workdir}
+COPY package.json ${workdir}
 RUN npm install
-COPY . /Users/aditya/Desktop/Aditya/practise/svg
+COPY . ${workdir}
 CMD npm start
 EXPOSE 3000
